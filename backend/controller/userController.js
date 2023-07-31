@@ -1,11 +1,12 @@
 import { newUser } from "../models/users.js";
 
-export const createUser = async () => {
+export const createUser = async (data) => {
   try {
-    const createNewUser = newUser({ username: "John", password: "Password" });
-    console.log(`User is ${createNewUser}`);
+    const createNewUser = newUser({
+      username: data.username,
+      password: data.password,
+    });
     await createNewUser.save();
-    console.log("Saved!");
   } catch (error) {
     console.log(error);
   }
