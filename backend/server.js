@@ -20,14 +20,14 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
-  console.log('Incoming request on url "/" ');
+  console.log('-- Incoming request on url "/" -- ');
+  res.send("Hello from '/' ");
 });
 
 app.post("/create", async (req, res) => {
+  console.log('-- Incoming request on url "/create" --');
   const data = req.body;
   const result = await createUser(data);
-  console.log('Incoming request on url "/create" ');
   res.send(result);
 });
 
