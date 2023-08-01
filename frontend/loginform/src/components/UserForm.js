@@ -9,8 +9,8 @@ const UserForm = () => {
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
-    setUserData((prevProps) => ({
-      ...prevProps,
+    setUserData((currentData) => ({
+      ...currentData,
       [name]: value,
     }));
   };
