@@ -2,7 +2,7 @@ import express from "express";
 import { main } from "./db.js";
 import { createUser } from "./controller/userController.js";
 const app = express();
-const port = 3000;
+const port = 8080;
 
 app.use(express.json());
 
