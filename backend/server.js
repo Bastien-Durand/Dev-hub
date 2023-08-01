@@ -20,12 +20,14 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
+  console.log(req.body);
   console.log('-- Incoming request on url "/" -- ');
   res.send("Hello from '/' ");
 });
 
 app.post("/create", async (req, res) => {
   console.log('-- Incoming request on url "/create" --');
+  console.log(req.body);
   const data = req.body;
   const result = await createUser(data);
   res.send(result);

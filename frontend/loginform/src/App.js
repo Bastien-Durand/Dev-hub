@@ -1,9 +1,12 @@
-function App() {
+import UserForm from "./components/UserForm";
+
+const App = () => {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <h1>Create account</h1>
+      <UserForm />
     </div>
   );
-}
+};
 
 export default App;

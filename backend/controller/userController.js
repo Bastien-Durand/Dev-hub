@@ -11,7 +11,7 @@ export const createUser = async (data) => {
       });
 
       const userCreated = await createNewUser.save();
-      return userCreated;
+      return { ...userCreated, message: "User created" };
     } else {
       return { message: "User already exists.", status: 400 };
     }
