@@ -2,9 +2,6 @@ import { userModel } from "../models/users.js";
 
 export const createUser = async (data) => {
   try {
-    console.log(data.email);
-    console.log("-- Database Query --");
-
     const doesEmailExist = await findUser(data);
 
     if (!doesEmailExist) {
@@ -16,7 +13,7 @@ export const createUser = async (data) => {
       const userCreated = await createNewUser.save();
       return userCreated;
     } else {
-      return { message: "Email already exists...", status: 400 };
+      return { message: "User already exists.", status: 400 };
     }
   } catch (error) {
     console.log(error);
@@ -28,8 +25,6 @@ const findUser = async (data) => {
     const email = data.email;
     const query = await userModel.find({ email: email }).exec();
 
-    console.log("query: ", query);
-
     if (query.length > 0) {
       return true;
     } else {
@@ -39,8 +34,3 @@ const findUser = async (data) => {
     console.log(error);
   }
 };
-
-// get input email
-// get database items with input email
-// if existant - return
-// if non existant - createNewUser.save()
