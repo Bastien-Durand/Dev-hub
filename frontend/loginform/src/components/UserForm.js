@@ -1,5 +1,6 @@
-import { useState } from "react";
+import bcrypt from "bcryptjs";
 import axios from "axios";
+import { useState } from "react";
 
 const UserForm = () => {
   const [userData, setUserData] = useState({
@@ -19,12 +20,17 @@ const UserForm = () => {
     e.preventDefault();
     console.log(userData);
 
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(userData.password, salt);
+
+    console.log(hash);
+
     const url = "http://localhost:8080/create";
 
     axios
       .post(url, {
         email: userData.email,
-        password: userData.password,
+        password: hash,
       })
       .then(function (response) {
         console.log(response);
