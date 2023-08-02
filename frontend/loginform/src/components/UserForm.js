@@ -1,5 +1,6 @@
 import bcrypt from "bcryptjs";
 import axios from "axios";
+import "./userform.css";
 import { useState } from "react";
 
 const UserForm = () => {
@@ -42,35 +43,56 @@ const UserForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>
-          <input
-            type="text"
-            name="email"
-            placeholder="Email"
-            onChange={onChangeHandler}
-            value={userData.email}
-          />
-        </label>
-        <hr />
-        <label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={onChangeHandler}
-            value={userData.password}
-          />
-        </label>
-        <hr />
-        <label>
-          Terms & Conditions <input type="checkbox" name="myCheckbox" />
-        </label>
-        <hr />
-        <button type="submit">Submit</button>
+    <div className="formLayout">
+      <div className="formTitle">
+        <h1>Create a new account</h1>
       </div>
-    </form>
+      <div className="formSubtext">
+        <p>It's quick and easy.</p>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="firstFormDiv">
+          <label>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              onChange={onChangeHandler}
+              value={userData.email}
+            />
+          </label>
+          <label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={onChangeHandler}
+              value={userData.password}
+            />
+          </label>
+          <label>
+            <div classname="termsAndConditionsLayout">
+              <p className="termsAndConditions">
+                People who use our service may have uploaded your contact
+                information to Facebook. <a href="#">Learn more</a>.
+              </p>
+              <p className="termsAndConditions">
+                By clicking Sign Up, you agree to our <a href="#">Terms</a>.
+                Learn how we collect, use and share your data in our{" "}
+                <a href="#">Privacy Policy</a>
+                and how we use cookies and similar technology in our{" "}
+                <a href="#">Cookies</a> Policy. You may receive SMS
+                notifications from us and can opt out at any time.
+              </p>
+            </div>
+          </label>
+
+          <button type="submit">Create Account</button>
+
+          <a href="#">Already have an account?</a>
+        </div>
+      </form>
+    </div>
   );
 };
 
