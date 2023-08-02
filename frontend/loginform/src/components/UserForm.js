@@ -74,7 +74,7 @@ const UserForm = () => {
             <div classname="termsAndConditionsLayout">
               <p className="termsAndConditions">
                 People who use our service may have uploaded your contact
-                information to Facebook. <a href="#">Learn more</a>.
+                information to this service. <a href="#">Learn more</a>.
               </p>
               <p className="termsAndConditions">
                 By clicking Sign Up, you agree to our <a href="#">Terms</a>.
