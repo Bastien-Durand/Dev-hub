@@ -1,5 +1,6 @@
 import bcrypt from "bcryptjs";
 import axios from "axios";
+import validator from "validator";
 import "./userform.css";
 import { useState } from "react";
 
@@ -19,27 +20,38 @@ const UserForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (validator.isEmail(userData.email)) {
+      const passwordValidation = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+
+      if (userData.password.match(passwordValidation)) {
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(userData.password, salt);
+
+        const url = "http://localhost:8080/create";
+
+        axios
+          .post(url, {
+            email: userData.email,
+            password: hash,
+          })
+          .then(function (response) {
+            console.log(response);
+            alert(response.data.message);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      } else {
+        return alert(
+          "Password must be between 6 to 20 characters and contain at least one numeric digit, one uppercase and one lowercase letter"
+        );
+      }
+    } else {
+      return alert("Enter Valid Email");
+    }
+
     console.log(userData);
-
-    const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(userData.password, salt);
-
-    console.log(hash);
-
-    const url = "http://localhost:8080/create";
-
-    axios
-      .post(url, {
-        email: userData.email,
-        password: hash,
-      })
-      .then(function (response) {
-        console.log(response);
-        alert(response.data.message);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
   };
 
   return (
@@ -54,11 +66,12 @@ const UserForm = () => {
         <div className="firstFormDiv">
           <label>
             <input
-              type="text"
+              type="email"
               name="email"
               placeholder="Email"
               onChange={onChangeHandler}
               value={userData.email}
+              required
             />
           </label>
           <label>
@@ -68,6 +81,15 @@ const UserForm = () => {
               placeholder="Password"
               onChange={onChangeHandler}
               value={userData.password}
+              required
+              min={6}
+              max={20}
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$"
+              title="
+                  Password must be between 6 to 20 characters &#013; and contain at
+                  least one numeric digit, one uppercase and one lowercase
+                  letter
+              "
             />
           </label>
           <label>

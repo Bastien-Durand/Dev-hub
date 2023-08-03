@@ -10,6 +10,15 @@
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
+input::after {
+  content: "Your validation message";
+  background-color: purple;
+}
+
+input:invalid {
+  background-color: palegreen;
+}
+
 h1 {
   font-size: 25px;
   line-height: 32px;
@@ -32,7 +41,7 @@ h1 {
   gap: 1rem;
 }
 
-input[type="text"] {
+input[type="email"] {
   padding: 10px;
   margin: 20px 0px 5px 0px;
   width: 225px;
@@ -71,7 +80,6 @@ input:hover {
 button {
   appearance: none;
   -webkit-appearance: none;
-
   padding: 10px;
   border: none;
   background-color: blueviolet;
