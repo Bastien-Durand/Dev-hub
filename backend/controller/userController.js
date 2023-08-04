@@ -20,7 +20,7 @@ export const createUser = async (data) => {
   }
 };
 
-const findUser = async (data) => {
+export const findUser = async (data) => {
   try {
     const email = data.email;
     const query = await userModel.find({ email: email }).exec();
@@ -32,5 +32,27 @@ const findUser = async (data) => {
     }
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const login = async (data) => {
+  try {
+    const foundUser = await findUser(data);
+    console.log(`findUser() = ${foundUser}`);
+    if (foundUser) {
+      const query = await userModel.find({ password: data.password }).exec();
+      // Find out if theres a better way to reach password instead of query[0]
+      console.log(`Inside query[0].password == ${query[0].password}`);
+
+      if (data.password == query[0].password) {
+        return console.log("data.password == query.password = TRUE");
+      } else {
+        return console.log("data.password == query.password = FALSE");
+      }
+    } else {
+      return console.log("return User not found");
+    }
+  } catch (error) {
+    console.log(`This is the error message : ${error}`);
   }
 };

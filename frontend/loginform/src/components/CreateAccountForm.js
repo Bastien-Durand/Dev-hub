@@ -1,10 +1,10 @@
 import bcrypt from "bcryptjs";
 import axios from "axios";
 import validator from "validator";
-import "./userform.css";
+import "./createaccountform.css";
 import { useState } from "react";
 
-const UserForm = () => {
+const CreateAccountForm = () => {
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -118,4 +118,4 @@ const UserForm = () => {
   );
 };
 
-export default UserForm;
+export default CreateAccountForm;

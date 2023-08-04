@@ -1,0 +1,117 @@
+.formLayout {
+  margin: 20vh;
+  height: 320px;
+  width: 400px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+input::after {
+  content: "Your validation message";
+  background-color: purple;
+}
+
+input:invalid {
+  background-color: palegreen;
+}
+
+h1 {
+  font-size: 25px;
+  line-height: 32px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.formSubtext {
+  font-size: 15px;
+  line-height: 0px;
+  color: #777777;
+}
+
+.firstFormDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+input[type="email"] {
+  padding: 10px;
+  margin: 20px 0px 5px 0px;
+  width: 225px;
+  background-color: #fafafa;
+  border: 0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  transition: 0.3s box-shadow;
+  border-radius: 100px;
+
+  font-family: inherit;
+  font-size: inherit;
+}
+input[type="password"] {
+  padding: 10px;
+  margin: 0px 0px 5px 0px;
+  width: 225px;
+  background-color: #fafafa;
+  border: 0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  transition: 0.3s box-shadow;
+  border-radius: 100px;
+
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input:focus {
+  background-color: #eee;
+  border-color: #000;
+}
+
+input:hover {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 10px;
+  border: none;
+  background-color: blueviolet;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 65%;
+  font-family: inherit;
+  font-size: inherit;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  opacity: 90%;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+a {
+  text-decoration: none;
+  color: #1877f2;
+  font-weight: 500;
+}
+
+.termsAndConditions {
+  font-size: x-small;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #777777;
+}
