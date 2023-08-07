@@ -1,4 +1,5 @@
 import express from "express";
+import "dotenv/config";
 import { main } from "./db.js";
 import { createUser, login } from "./controller/userController.js";
 const app = express();
