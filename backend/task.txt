@@ -12,3 +12,14 @@ Email should be unique for all entries. No two users can have the same email.
 - Validate that a user’s email does not already exist in the database before creating a new user. If the email exists return an error message “User already exists”. This will later be displayed on the 
 frontend when the form is submitted.
 
+Tasks | Login
+
+R in CRUD. Database and endpoint for logging a user
+
+## Task 2
+
+The endpoint calls a function named `loginUser` 
+loginUser()
+	- Find’s a user based on email
+	- Using bcrypt confirm the password hashes match
+    - If the passwords match attach a jwt to the request  

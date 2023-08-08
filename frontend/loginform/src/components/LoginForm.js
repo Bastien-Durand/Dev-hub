@@ -40,9 +40,6 @@ const LoginForm = () => {
     }
   };
 
-  // get request the database with email and password
-  //
-
   return (
     <div className="formLayout">
       <div className="formTitle">
