@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="App">
       <CreateAccountForm />
-      {/* <LoginForm /> */}
+      <LoginForm />
     </div>
   );
 };

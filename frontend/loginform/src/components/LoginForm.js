@@ -1,4 +1,3 @@
-import bcrypt from "bcryptjs";
 import axios from "axios";
 import validator from "validator";
 import "./loginform.css";
@@ -21,25 +20,24 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(userData.password, salt);
+    if (validator.isEmail(userData.email)) {
+      const url = "http://localhost:8080/login";
 
-    const url = "http://localhost:8080/create";
+      axios
+        .post(url, {
+          email: userData.email,
+          password: userData.password,
+        })
+        .then(function (response) {
+          console.log(response);
+          alert(response.data.message);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
 
-    axios
-      .get(url, {
-        email: userData.email,
-        password: hash,
-      })
-      .then(function (response) {
-        console.log(response);
-        alert(response.data.message);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-    console.log(userData);
+      console.log(userData);
+    }
   };
 
   // get request the database with email and password

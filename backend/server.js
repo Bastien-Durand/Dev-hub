@@ -1,7 +1,11 @@
 import express from "express";
 import "dotenv/config";
 import { main } from "./db.js";
-import { createUser, login } from "./controller/userController.js";
+import {
+  createUser,
+  login,
+  authenticateJWT,
+} from "./controller/userController.js";
 const app = express();
 const port = 8080;
 
@@ -26,7 +30,7 @@ app.get("/", (req, res) => {
   res.send("Hello from '/' ");
 });
 
-app.get("/login", async (req, res) => {
+app.post("/login", async (req, res) => {
   console.log(req.body);
   console.log('-- Incoming request on url "/login" -- ');
   const data = req.body;
@@ -40,6 +44,12 @@ app.post("/create", async (req, res) => {
   const data = req.body;
   const result = await createUser(data);
   res.send(result);
+});
+
+app.get("/protected", authenticateJWT, (req, res) => {
+  res.json({
+    message: `Hello, ${req.user.username}! This is a protected route.`,
+  });
 });
 
 app.listen(port, () => {

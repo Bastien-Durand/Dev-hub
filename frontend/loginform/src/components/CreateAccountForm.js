@@ -1,6 +1,5 @@
 import axios from "axios";
 import validator from "validator";
-import bcrypt from "bcryptjs";
 import "./createaccountform.css";
 import { useState } from "react";
 
@@ -25,14 +24,12 @@ const CreateAccountForm = () => {
       const passwordValidation = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 
       if (userData.password.match(passwordValidation)) {
-        const hash = await bcrypt.hash(userData.password, 8);
-
         const url = "http://localhost:8080/create";
 
         axios
           .post(url, {
             email: userData.email,
-            password: hash,
+            password: userData.password,
           })
           .then(function (response) {
             console.log(response);
