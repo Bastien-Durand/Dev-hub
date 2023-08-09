@@ -3,6 +3,8 @@ import validator from "validator";
 import "./loginform.css";
 import { useState } from "react";
 
+var currentToken = "";
+
 const LoginForm = () => {
   const [userData, setUserData] = useState({
     email: "",
@@ -29,8 +31,8 @@ const LoginForm = () => {
           password: userData.password,
         })
         .then(function (response) {
-          console.log(response);
-          alert(response.data.message);
+          currentToken = response.data.accessToken;
+          console.log(`currentToken: ${currentToken}`);
         })
         .catch(function (error) {
           console.log(error);
