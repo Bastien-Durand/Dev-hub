@@ -5,8 +5,6 @@ import bcrypt from "bcryptjs";
 
 const numSaltRounds = parseInt(process.env.SALT_ROUNDS);
 
-console.log(numSaltRounds);
-
 export const createUser = async (data) => {
   try {
     const doesEmailExist = await findUser(data);
