@@ -1,0 +1,9 @@
+.navbar {
+  background-color: orange;
+}
+
+.ulist {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}

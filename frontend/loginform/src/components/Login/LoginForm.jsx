@@ -1,6 +1,6 @@
 import axios from "axios";
 import validator from "validator";
-import "../Login/loginform.css";
+import styles from "../Login/loginform.module.css";
 import { useState } from "react";
 
 var currentToken = "";
@@ -43,13 +43,13 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="loginFormLayout">
-      <div className="formTitle">
+    <div className={styles.loginFormLayout}>
+      <div className={styles.formTitle}>
         <h1>Log in</h1>
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="firstFormDiv">
+        <div className={styles.firstFormDiv}>
           <label>
             <input
               type="email"

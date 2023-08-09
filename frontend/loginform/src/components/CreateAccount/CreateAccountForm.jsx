@@ -1,6 +1,6 @@
 import axios from "axios";
 import validator from "validator";
-import "../CreateAccount/createaccountform.css";
+import styles from "../CreateAccount/createaccountform.module.css";
 import { useState } from "react";
 
 const CreateAccountForm = () => {
@@ -51,15 +51,15 @@ const CreateAccountForm = () => {
   };
 
   return (
-    <div className="createAccountFormLayout">
-      <div className="formTitle">
+    <div className={styles.createAccountFormLayout}>
+      <div className={styles.formTitle}>
         <h1>Create a new account</h1>
       </div>
-      <div className="formSubtext">
+      <div className={styles.formSubtext}>
         <p>It's quick and easy.</p>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="firstFormDiv">
+        <div className={styles.firstFormDiv}>
           <label>
             <input
               type="email"
@@ -89,12 +89,12 @@ const CreateAccountForm = () => {
             />
           </label>
           <label>
-            <div classname="termsAndConditionsLayout">
-              <p className="termsAndConditions">
+            <div classname={styles.termsAndConditionsLayout}>
+              <p className={styles.termsAndConditions}>
                 People who use our service may have uploaded your contact
                 information to this service. <a href="#">Learn more</a>.
               </p>
-              <p className="termsAndConditions">
+              <p className={styles.termsAndConditions}>
                 By clicking Sign Up, you agree to our <a href="#">Terms</a>.
                 Learn how we collect, use and share your data in our{" "}
                 <a href="#">Privacy Policy</a>
