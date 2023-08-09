@@ -1,6 +1,6 @@
 import axios from "axios";
 import validator from "validator";
-import "./loginform.css";
+import "../Login/loginform.css";
 import { useState } from "react";
 
 var currentToken = "";
@@ -43,7 +43,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="formLayout">
+    <div className="loginFormLayout">
       <div className="formTitle">
         <h1>Log in</h1>
       </div>

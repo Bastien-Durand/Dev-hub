@@ -1,14 +1,15 @@
-import CreateAccountForm from "./components/CreateAccountForm";
-import Navbar from "./components/Navbar";
-import LoginForm from "./components/LoginForm";
+import { Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import CreateAccountPage from "./pages/CreateAccountPage";
 
 const App = () => {
   return (
-    <div className="App">
-      <Navbar />
-      <CreateAccountForm />
-      <LoginForm />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/create" element={<CreateAccountPage />} />
+      </Routes>
+    </>
   );
 };
 

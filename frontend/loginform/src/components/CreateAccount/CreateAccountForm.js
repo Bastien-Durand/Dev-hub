@@ -1,6 +1,6 @@
 import axios from "axios";
 import validator from "validator";
-import "./createaccountform.css";
+import "../CreateAccount/createaccountform.css";
 import { useState } from "react";
 
 const CreateAccountForm = () => {
@@ -51,7 +51,7 @@ const CreateAccountForm = () => {
   };
 
   return (
-    <div className="formLayout">
+    <div className="createAccountFormLayout">
       <div className="formTitle">
         <h1>Create a new account</h1>
       </div>
