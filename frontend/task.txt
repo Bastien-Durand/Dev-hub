@@ -1,5 +1,0 @@
-## Task 2
-
-Create a form with email and password field. On form submit should send email and hashed password to your backend and create a new user.
-The UI should show whether the user was created successfully or if the user was not created display an error message explaining why. 
-
