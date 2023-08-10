@@ -20,9 +20,9 @@
 
 #### Utility:
 
-Insomnia
-MongoDB Compass
-Lighthouse
+- Insomnia
+- MongoDB Compass
+- Lighthouse
 
 # Task 1
 
