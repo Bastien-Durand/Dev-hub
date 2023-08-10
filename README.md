@@ -52,8 +52,7 @@ Email should be unique for all entries. No two users can have the same email.
 
 1. Create an endpoint `/user/login`-
 
-- Request type
-- {email: <string>, password: <string> (this will be the password hashed)
+- Request type: {email: <string>, password: <string> (this will be the password hashed)
 
 #### The endpoint calls a function named`loginUser`
 
