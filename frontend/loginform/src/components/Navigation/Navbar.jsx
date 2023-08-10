@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styles from "../Navigation/navbar.module.css";
 
 const Navbar = () => {
@@ -5,13 +6,13 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <ul className={styles.ulist}>
         <li>
-          <button>Home</button>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <button>Login</button>
+          <NavLink to="/login">Login</NavLink>
         </li>
         <li>
-          <button>Create Account</button>
+          <NavLink to="/create">Create Account</NavLink>
         </li>
       </ul>
     </nav>

@@ -1,9 +1,18 @@
-.navbar {
-  background-color: orange;
-}
-
 .ulist {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   list-style-type: none;
+}
+
+ul li a {
+  color: #000;
+}
+
+ul li a:hover {
+  color: #00a8ff;
+}
+
+ul li a.active {
+  color: #00a8ff;
 }

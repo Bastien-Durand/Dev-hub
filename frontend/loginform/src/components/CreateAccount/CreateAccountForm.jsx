@@ -52,7 +52,7 @@ const CreateAccountForm = () => {
 
   return (
     <div className={styles.createAccountFormLayout}>
-      <div className={styles.formTitle}>
+      <div>
         <h1>Create a new account</h1>
       </div>
       <div className={styles.formSubtext}>
