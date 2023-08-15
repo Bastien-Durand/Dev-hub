@@ -1,8 +1,23 @@
+.layout {
+  /* margin-top: 3rem; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .loginFormLayout {
-  margin: 20vh;
-  height: 320px;
+  height: 440px;
   width: 400px;
   background: #fff;
+  position: "absolute";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   display: flex;
   align-items: center;
   flex-direction: column;

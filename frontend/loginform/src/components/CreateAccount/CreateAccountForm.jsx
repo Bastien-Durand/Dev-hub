@@ -2,6 +2,7 @@ import axios from "axios";
 import validator from "validator";
 import styles from "../CreateAccount/createaccountform.module.css";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const CreateAccountForm = () => {
   const [userData, setUserData] = useState({
@@ -51,7 +52,12 @@ const CreateAccountForm = () => {
   };
 
   return (
-    <div className={styles.createAccountFormLayout}>
+    <motion.div
+      initial={{ opacity: 0.5, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+      className={styles.createAccountFormLayout}
+    >
       <div>
         <h1>Create a new account</h1>
       </div>
@@ -89,7 +95,12 @@ const CreateAccountForm = () => {
             />
           </label>
           <label>
-            <div classname={styles.termsAndConditionsLayout}>
+            <div
+              classname={styles.termsAndConditionsLayout}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
               <p className={styles.termsAndConditions}>
                 People who use our service may have uploaded your contact
                 information to this service. <a href="#">Learn more</a>.
@@ -110,7 +121,7 @@ const CreateAccountForm = () => {
           <a href="#">Already have an account?</a>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,6 +2,7 @@ import axios from "axios";
 import validator from "validator";
 import styles from "../Login/loginform.module.css";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 var currentToken = "";
 
@@ -43,11 +44,15 @@ const LoginForm = () => {
   };
 
   return (
-    <div className={styles.loginFormLayout}>
+    <motion.div
+      initial={{ opacity: 0.5, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+      className={styles.loginFormLayout}
+    >
       <div className={styles.formTitle}>
         <h1>Log in</h1>
       </div>
-
       <form onSubmit={handleSubmit}>
         <div className={styles.firstFormDiv}>
           <label>
@@ -83,9 +88,19 @@ const LoginForm = () => {
           <button type="submit">Log in</button>
 
           <a href="#">Create an account</a>
+          <a href="#">Forgot password?</a>
         </div>
       </form>
-    </div>
+      <hr
+        style={{
+          color: "grey",
+          width: "300px",
+          marginTop: "15px",
+        }}
+      />
+
+      <button style={{ marginTop: "15px" }}>Login with Google</button>
+    </motion.div>
   );
 };
 

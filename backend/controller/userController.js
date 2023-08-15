@@ -66,7 +66,7 @@ export const login = async (data) => {
 export const authenticateJWT = (req, res, next) => {
   console.log(req.headers);
   const token = req.headers.authorization?.split(" ")[1];
-  console.log(token);
+  console.log(`req.headers.authorization : ${token}`);
 
   if (token) {
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {

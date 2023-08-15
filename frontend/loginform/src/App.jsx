@@ -7,14 +7,29 @@ import "./index.css";
 
 const App = () => {
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/create" element={<CreateAccountPage />} />
-      </Routes>
-    </>
+    <div
+      style={{
+        display: "grid",
+        placeItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "1280px",
+          display: "grid",
+          placeItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/create" element={<CreateAccountPage />} />
+        </Routes>
+      </div>
+    </div>
   );
 };
 
