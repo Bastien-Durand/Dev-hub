@@ -1,29 +1,8 @@
-.homeLayout {
-  margin: 20vh;
-  height: 320px;
-  width: 400px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 20px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-}
-
-h1 {
-  font-size: 25px;
-  line-height: 32px;
-  text-align: center;
-  margin-bottom: 0px;
-}
-
-.homeSubtext {
-  font-size: 15px;
-  line-height: 0px;
-  color: #777777;
+.layout {
 }
 
 .card {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 300px;
+  background: #fff;
 }

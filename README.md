@@ -59,3 +59,10 @@ Email should be unique for all entries. No two users can have the same email.
 - loginUser() - Find’s a user based on email
 - Using bcrypt confirm the password hashes match
 - If the passwords match attach a jwt to the request
+
+# Task 4
+
+1. Rebuild the front end using a modern design library
+2. Build out your public content ui
+3. Build out your protected route ui content
+4. Make sure users logged in can only access the protected content
