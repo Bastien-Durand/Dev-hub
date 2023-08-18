@@ -33,8 +33,12 @@ const CreateAccountForm = () => {
             password: userData.password,
           })
           .then(function (response) {
-            console.log(response);
-            alert(response.data.message);
+            if (response.status === 200) {
+              console.log(response);
+              alert(response.data.message);
+            } else {
+              alert("There was an error");
+            }
           })
           .catch(function (error) {
             console.log(error);
@@ -110,8 +114,7 @@ const CreateAccountForm = () => {
                 Learn how we collect, use and share your data in our{" "}
                 <a href="#">Privacy Policy</a>
                 and how we use cookies and similar technology in our{" "}
-                <a href="#">Cookies</a> Policy. You may receive SMS
-                notifications from us and can opt out at any time.
+                <a href="#">Cookies</a> Policy.
               </p>
             </div>
           </label>

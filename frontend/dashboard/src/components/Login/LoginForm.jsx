@@ -32,8 +32,13 @@ const LoginForm = () => {
           password: userData.password,
         })
         .then(function (response) {
-          currentToken = response.data.accessToken;
-          console.log(`currentToken: ${currentToken}`);
+          if (response.data.status === 404) {
+            alert(response.data.message);
+          } else {
+            console.log(response);
+            currentToken = response.data.accessToken;
+            console.log(`currentToken: ${currentToken}`);
+          }
         })
         .catch(function (error) {
           console.log(error);

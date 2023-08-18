@@ -5,7 +5,11 @@ import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEarListen,
+  faEnvelope,
+  faEnvelopeOpen,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   return (
@@ -13,9 +17,9 @@ const Home = () => {
       <Box
         sx={{
           width: "100%",
-          maxWidth: 500,
+          maxWidth: 400,
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+          gridTemplateColumns: "1fr",
           gap: 2,
           textAlign: "center",
         }}
@@ -39,7 +43,7 @@ const Home = () => {
         </Card>
 
         <Card variant="outlined">
-          <FontAwesomeIcon icon={faEnvelope} size="3x" />
+          <FontAwesomeIcon icon={faEnvelopeOpen} size="3x" />
           <CardContent>
             <Typography
               level="title-md"
@@ -57,7 +61,7 @@ const Home = () => {
         </Card>
 
         <Card variant="outlined">
-          <FontAwesomeIcon icon={faEnvelope} size="3x" />
+          <FontAwesomeIcon icon={faEarListen} size="3x" />
           <CardContent>
             <Typography
               level="title-md"
