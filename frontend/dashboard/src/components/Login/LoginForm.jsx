@@ -92,8 +92,8 @@ const LoginForm = () => {
 
           <button type="submit">Log in</button>
 
-          <a href="#">Create an account</a>
-          <a href="#">Forgot password?</a>
+          <a href="/">Create an account</a>
+          <a href="/">Forgot password?</a>
         </div>
       </form>
       <hr

@@ -107,21 +107,21 @@ const CreateAccountForm = () => {
             >
               <p className={styles.termsAndConditions}>
                 People who use our service may have uploaded your contact
-                information to this service. <a href="#">Learn more</a>.
+                information to this service. <a href="/">Learn more</a>.
               </p>
               <p className={styles.termsAndConditions}>
-                By clicking Sign Up, you agree to our <a href="#">Terms</a>.
+                By clicking Sign Up, you agree to our <a href="/">Terms</a>.
                 Learn how we collect, use and share your data in our{" "}
-                <a href="#">Privacy Policy</a>
+                <a href="/">Privacy Policy</a>
                 and how we use cookies and similar technology in our{" "}
-                <a href="#">Cookies</a> Policy.
+                <a href="/">Cookies</a> Policy.
               </p>
             </div>
           </label>
 
           <button type="submit">Create Account</button>
 
-          <a href="#">Already have an account?</a>
+          <a href="/">Already have an account?</a>
         </div>
       </form>
     </motion.div>

@@ -1,4 +1,3 @@
-import styles from "../Home/Home.module.css";
 import Box from "@mui/joy/Box";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
