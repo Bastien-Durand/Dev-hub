@@ -4,24 +4,12 @@ import Navbar from "./components/Navigation/Navbar";
 import HomePage from "./pages/HomePage";
 import CreateAccountPage from "./pages/CreateAccountPage";
 import "./index.css";
+import styles from "./layout.module.css";
 
 const App = () => {
   return (
-    <div
-      style={{
-        display: "grid",
-        placeItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1280px",
-          display: "grid",
-          placeItems: "center",
-          justifyContent: "center",
-        }}
-      >
+    <div className={styles.outerlayout}>
+      <div className={styles.innerlayout}>
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

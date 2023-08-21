@@ -1,0 +1,12 @@
+.outerlayout {
+  display: grid;
+  place-items: center;
+  justify-content: center;
+}
+
+.innerlayout {
+  max-width: 1280px;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+}
