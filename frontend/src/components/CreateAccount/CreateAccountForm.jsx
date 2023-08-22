@@ -25,7 +25,8 @@ const CreateAccountForm = () => {
       const passwordValidation = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 
       if (userData.password.match(passwordValidation)) {
-        const url = "http://localhost:8080/create";
+        const url = "https://dev-hub-backend-lbe88.ondigitalocean.app/create";
+        // http://localhost:8080/create
 
         axios
           .post(url, {

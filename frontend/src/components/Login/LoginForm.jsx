@@ -24,7 +24,8 @@ const LoginForm = () => {
     e.preventDefault();
 
     if (validator.isEmail(userData.email)) {
-      const url = "http://localhost:8080/login";
+      const url = "https://dev-hub-backend-lbe88.ondigitalocean.app/login";
+      // http://localhost:8080/login
 
       axios
         .post(url, {
