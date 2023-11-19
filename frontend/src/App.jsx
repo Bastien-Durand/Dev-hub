@@ -9,14 +9,14 @@ import styles from "./layout.module.css";
 const App = () => {
   return (
     <div className={styles.outerlayout}>
-      <div className={styles.innerlayout}>
+      <div className={styles.absolute}>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/create" element={<CreateAccountPage />} />
-        </Routes>
       </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/create" element={<CreateAccountPage />} />
+      </Routes>
     </div>
   );
 };
