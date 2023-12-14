@@ -16,10 +16,7 @@ main().catch((err) => {
 });
 
 app.use(function (req, res, next) {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://dev-hub-deployment-zdtrg.ondigitalocean.app/"
-  );
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -39,13 +36,15 @@ app.post("/login", async (req, res) => {
   const data = req.body;
   const result = await login(data);
   res.send(result);
+  console.log("-- User successfully logged In --");
+  console.log(`-- JWT Token ${result}`);
 });
 
 app.post("/create", async (req, res) => {
   console.log('-- Incoming request on url "/create" --');
   console.log(req.body);
   const data = req.body;
-  const result = await createUser(data);
+  const result = await createUser(data.message);
   res.send(result);
 });
 

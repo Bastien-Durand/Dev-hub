@@ -1,4 +1,6 @@
 import axios from "axios";
+import Cookies from "universal-cookie";
+import { jwtDecode } from "jwt-decode";
 import validator from "validator";
 import styles from "../Login/loginform.module.css";
 import { useState } from "react";
@@ -7,6 +9,9 @@ import { motion } from "framer-motion";
 var currentToken = "";
 
 const LoginForm = () => {
+  // Iniitalize cookies
+  const cookies = new Cookies();
+
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -24,14 +29,15 @@ const LoginForm = () => {
     e.preventDefault();
 
     if (validator.isEmail(userData.email)) {
-      const url = "https://dev-hub-backend-lbe88.ondigitalocean.app/login";
-      // http://localhost:8080/login
+      const url = "http://localhost:8080/login";
 
       axios
         .post(url, {
           email: userData.email,
           password: userData.password,
+          credentials: true,
         })
+
         .then(function (response) {
           if (response.data.status === 404) {
             alert(response.data.message);
@@ -39,8 +45,17 @@ const LoginForm = () => {
             console.log(response);
             currentToken = response.data.accessToken;
             console.log(`currentToken: ${currentToken}`);
+            // Decode JWT token
+            const decoded = jwtDecode(currentToken);
+
+            // Set cookie
+            cookies.set("jwt_authorization", decoded),
+              {
+                expires: new Date(decoded.exp * 1000),
+              };
           }
         })
+
         .catch(function (error) {
           console.log(error);
         });
