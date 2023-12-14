@@ -111,11 +111,11 @@ const CreateAccountForm = () => {
                 information to this service. <a href="/">Learn more</a>.
               </p>
               <p className={styles.termsAndConditions}>
-                By clicking Sign Up, you agree to our <a href="/">Terms</a>.
-                Learn how we collect, use and share your data in our{" "}
-                <a href="/">Privacy Policy</a>
-                and how we use cookies and similar technology in our{" "}
-                <a href="/">Cookies</a> Policy.
+                By clicking Create Account, you agree to our{" "}
+                <a href="/">Terms</a>. Learn how we collect, use and share your
+                data in our <a href="/">Privacy Policy</a> and how we use
+                cookies and similar technology in our <a href="/">Cookies</a>{" "}
+                Policy.
               </p>
             </div>
           </label>

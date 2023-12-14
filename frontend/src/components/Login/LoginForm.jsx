@@ -1,12 +1,12 @@
 import axios from "axios";
 import Cookies from "universal-cookie";
-import { jwtDecode } from "jwt-decode";
 import validator from "validator";
 import styles from "../Login/loginform.module.css";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
 var currentToken = "";
+var validUser = "";
 
 const LoginForm = () => {
   // Iniitalize cookies
@@ -35,7 +35,6 @@ const LoginForm = () => {
         .post(url, {
           email: userData.email,
           password: userData.password,
-          credentials: true,
         })
 
         .then(function (response) {
@@ -44,15 +43,11 @@ const LoginForm = () => {
           } else {
             console.log(response);
             currentToken = response.data.accessToken;
-            console.log(`currentToken: ${currentToken}`);
-            // Decode JWT token
-            const decoded = jwtDecode(currentToken);
+            validUser = response.data.loggedInUser;
+            document.cookie = `user=${validUser} token=${currentToken} SameSite=None; Secure`;
+            alert("Successfully logged in");
 
-            // Set cookie
-            cookies.set("jwt_authorization", decoded),
-              {
-                expires: new Date(decoded.exp * 1000),
-              };
+            console.log(document.cookie);
           }
         })
 

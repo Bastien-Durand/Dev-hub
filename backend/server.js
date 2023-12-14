@@ -31,20 +31,20 @@ app.get("/", (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-  console.log(req.body);
+  console.log(`${req.body} REQ BODY`);
   console.log('-- Incoming request on url "/login" -- ');
   const data = req.body;
   const result = await login(data);
   res.send(result);
   console.log("-- User successfully logged In --");
-  console.log(`-- JWT Token ${result}`);
+  console.log(`-- JWT Token ${result} --`);
 });
 
 app.post("/create", async (req, res) => {
   console.log('-- Incoming request on url "/create" --');
   console.log(req.body);
   const data = req.body;
-  const result = await createUser(data.message);
+  const result = await createUser(data);
   res.send(result);
 });
 

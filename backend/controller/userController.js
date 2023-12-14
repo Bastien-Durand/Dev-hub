@@ -54,14 +54,7 @@ export const login = async (data) => {
     if (bcrypt.compareSync(data.password, password)) {
       const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
 
-      //{
-      // expiresIn: "1h",
-      //
-      // res.cookie("token", accessToken, {
-      //   httpOnly: true
-      // })
-
-      return { accessToken, message: accessToken };
+      return { accessToken, loggedInUser: user };
     } else {
       return { message: "Incorrect password", status: 404 };
     }
