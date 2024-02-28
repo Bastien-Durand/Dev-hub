@@ -1,68 +1,58 @@
-## Tools & Libaries
+# Full Stack MERN Project
 
-#### Back:
+This project is built using the MERN stack, aiming to demonstrate a comprehensive implementation of user authentication and management, from user creation to login, utilizing modern web development practices and tools.
 
-- Express
-- Mongodb
-- Mongoose
-- Bcryptjs
-- Jsonwebtoken
-- Dotenv
-- Nodemon
+## Tools & Libraries
 
-#### Front:
+### Backend
 
-- React
-- React-router-dom
-- Axios
-- Validator
-- Css-modules
+- **Express**: A minimal and flexible Node.js web application framework.
+- **MongoDB**: A NoSQL database for storing data in a flexible, JSON-like format.
+- **Mongoose**: An ODM (Object Data Modeling) library for MongoDB and Node.js.
+- **Bcryptjs**: A library to help hash passwords.
+- **Jsonwebtoken**: A library to implement JSON Web Tokens.
+- **Dotenv**: Loads environment variables from a `.env` file into `process.env`.
+- **Nodemon**: A utility that monitors for any changes in your source and automatically restarts your server.
 
-#### Utility:
+### Frontend
 
-- Insomnia
-- MongoDB Compass
-- Lighthouse
+- **React**: A JavaScript library for building user interfaces.
+- **React-router-dom**: DOM bindings for React Router.
+- **Axios**: A promise-based HTTP client for the browser and node.js.
+- **Validator**: A library of string validators and sanitizers.
+- **CSS-Modules**: Stylesheet management for component-based styling.
 
-# Task 1
+### Utility
 
-C in CRUD. Database and endpoint for creating a user
+- **Insomnia**: An API client for testing and debugging RESTful APIs.
+- **MongoDB Compass**: The GUI for MongoDB.
+- **Lighthouse**: An open-source, automated tool for improving the quality of web pages.
 
-1. Create a database schema with User a collection that accepts an email and password field. Both fields should be strings.
+## Project Tasks
 
-2. Create a post endpoint /user/create that handles creating a new user in the database
+### Task 1: Create User (C in CRUD)
 
-### Endpoint requirements
+- **Database Schema**: Create a `User` collection schema with fields for `email` and `password`, both strings.
+- **Endpoint**: Implement a POST endpoint `/user/create` for creating a new user. Ensure emails are unique.
 
-Email should be unique for all entries. No two users can have the same email.
+#### Endpoint Requirements
 
-- Validate that a user’s email does not already exist in the database before creating a new user.
+- Validate the uniqueness of the user's email. If it exists, return an error message "User already exists".
 
-- If the email exists return an error message “User already exists”. This will later be displayed on the frontend when the form is submitted.
+### Task 2: User Creation Form
 
-# Task 2
+- Develop a form with fields for email and password.
+- On form submission, send the email and hashed password to the backend to create a new user.
+- Display appropriate messages for success or failure (e.g., user already exists).
 
-- Create a form with email and password field. On form submit should send email and hashed password to your backend and create a new user.
+### Task 3: User Login
 
-- The UI should show whether the user was created successfully or if the user was not created display an error message explaining why.
+- **Endpoint**: Create an endpoint `/user/login` to handle login requests.
+- **Function**: Implement `loginUser()` to find a user by email and verify password with bcrypt.
+- If successful, attach a JWT to the request for session handling.
 
-# Task 3
+### Task 4: UI Rebuild and Route Protection
 
-### User Login
-
-1. Create an endpoint `/user/login`-
-
-- Request type: {email: <string>, password: <string>} (this will be the password hashed)
-
-#### The endpoint calls a function named`loginUser`
-
-- loginUser() - Find’s a user based on email
-- Using bcrypt confirm the password hashes match
-- If the passwords match attach a jwt to the request
-
-# Task 4
-
-1. Rebuild the front end using a modern design library
-2. Build out your public content ui
-3. Build out your protected route ui content
-4. Make sure users logged in can only access the protected content
+- Rebuild the frontend using a modern design library.
+- Implement public and protected routes.
+- Ensure that only logged-in users can access protected content.
